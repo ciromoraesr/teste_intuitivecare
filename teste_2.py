@@ -2,7 +2,7 @@ import zipfile
 import os
 import pdfplumber
 import pandas as pd
-
+import shutil
 #extraindo o pdf resultado do teste 1
 zip_path = os.path.join(os.getcwd(), "anexo_bin_zipada.zip")
 extract_dir = "dest"
@@ -61,14 +61,15 @@ for i in range(len(legendas)):
     
 
 #concatenando todos os dataframes em um só para salvar em csv
-        
+     
 final = pd.concat(tables, ignore_index = True)
 #alterando o nome das colunas solicitadas e também retirando o marcador de fim de linha para melhor formatação do csv
 final = final.rename(columns = {'RN\n(alteração)':'RN (alteração)','OD': abrevi_leg['OD'], 'AMB': abrevi_leg['AMB']})
-print(final.columns)
+
 final.head()
 compression_opts = dict(method='zip',
                         archive_name='output_Teste_Ciro_Moraes.csv')  
 final.to_csv('Teste_Ciro_Moraes.zip', index=False,
           compression=compression_opts)
-
+#deletando a pasta auxilar após usa-la
+shutil.rmtree(extract_dir)  
