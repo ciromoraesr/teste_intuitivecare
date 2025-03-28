@@ -25,8 +25,9 @@ CREATE TABLE operadoras (
 
 
 
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/Relatorio_cadop.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/Relatorio_cadop.csv'
 INTO TABLE operadoras
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -73,8 +74,9 @@ CREATE TABLE contabeis_2023 (
 );
 
 -- Carregando dados do primeiro trimestre
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/1T2023.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/1T2023.csv'
 INTO TABLE contabeis_2023
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -96,8 +98,9 @@ SET
     Trimestre = 1;
 
 -- Carregando dados do segundo trimestre
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/2T2023.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/2T2023.csv'
 INTO TABLE contabeis_2023
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -117,8 +120,9 @@ SET
     Trimestre = 2;
 
 -- Carregando dados do terceiro trimestre
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/3T2023.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/3T2023.csv'
 INTO TABLE contabeis_2023
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -138,8 +142,9 @@ SET
     Trimestre = 3;
 
 -- Carregando dados do quarto trimestre
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/4T2023.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/4T2023.csv'
 INTO TABLE contabeis_2023
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -170,8 +175,9 @@ CREATE TABLE contabeis_2024 (
 );
 
 -- Carregando dados do primeiro trimestre
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/1T2024.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/1T2024.csv'
 INTO TABLE contabeis_2024
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -191,8 +197,9 @@ SET
     Trimestre = 1;
 
 -- Carregando dados do segundo trimestre
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/2T2024.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/2T2024.csv'
 INTO TABLE contabeis_2024
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -212,8 +219,9 @@ SET
     Trimestre = 2;
 
 -- Carregando dados do terceiro trimestre
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/3T2024.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/3T2024.csv'
 INTO TABLE contabeis_2024
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -233,8 +241,9 @@ SET
     Trimestre = 3;
 
 -- Carregando dados do quarto trimestre
-LOAD DATA INFILE 'C:/test_intuitive/test3_db/4T2024.csv'
+LOAD DATA INFILE 'C:/teste_intuitivecare/teste_3/4T2024.csv'
 INTO TABLE contabeis_2024
+CHARACTER SET UTF8
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -273,7 +282,7 @@ FROM     contabeis_2024 AS cb
 INNER JOIN     operadoras AS op 
 ON cb.Registro_ANS = op.Registro_ANS
 -- No último trimestre
-WHERE     cb.Descricao LIKE '%eventos/sinistros conhecidos%'     
+WHERE     LOWER(cb.Descricao)  LIKE '%eventos/sinistros conhecidos%'     
 AND cb.Trimestre = 4 
 GROUP BY op.Registro_ANS
 ORDER BY Gasto DESC LIMIT 10;
@@ -292,7 +301,7 @@ FROM     contabeis_2024 AS cb
 INNER JOIN     operadoras AS op 
 ON cb.Registro_ANS = op.Registro_ANS
 -- No último Ano
-WHERE     cb.Descricao LIKE '%eventos/sinistros conhecidos%'      
+WHERE     LOWER(cb.Descricao)  LIKE '%eventos/sinistros conhecidos%'      
 GROUP BY op.Registro_ANS
 ORDER BY Gasto DESC LIMIT 10;
 
