@@ -54,7 +54,7 @@
   - **Frontend**: [https://vuefrontintuitive4.vercel.app/](https://vuefrontintuitive4.vercel.app/)
     
   - **Backend**: [https://flaskapiintuitive4.vercel.app/](https://flaskapiintuitive4.vercel.app/)
-- No código-fonte do **Teste 4**, há um **JSON** com os testes realizados no **Postman**.
+- No código-fonte do **Teste 4**, há um **JSON** com os testes realizados no **Postman**, para utiliza-la, basta importar esse json em sua conta no postman.
   ![Image](https://github.com/user-attachments/assets/b9ebbe58-55e5-410f-973a-ae8ec8d4c7e0)  
 - Realizei **5 testes**, demonstrando a capacidade da API.  
 - Para testar a API, basta utilizar um dos seguintes endpoints:  
