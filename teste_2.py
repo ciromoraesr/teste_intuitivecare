@@ -23,7 +23,8 @@ with pdfplumber.open(pdf_path) as pdf:
     #parte mais demorada do código já que existem muitas linhas em cada tabela
     num_pages = len(pdf.pages)
     page = pdf.pages[2]
-    textos = page.extract_text()  
+    textos = page.extract_text() 
+    print(f"Processando {num_pages} páginas...") 
     for i in range(2, num_pages):
         page = pdf.pages[i]
         table = page.extract_table()
@@ -39,7 +40,6 @@ for i in range(len(textos)):
     if(textos[i:i+8] == "Legenda:"):
         categorias = textos[i+9:len(textos) - 1]
 legendas = categorias.strip().split()
-print(legendas)
 
 #Formatação para atribuir as legendas a cada uma das abreviações solicitadas
 abrevi_leg = {}
@@ -66,10 +66,10 @@ final = pd.concat(tables, ignore_index = True)
 #alterando o nome das colunas solicitadas e também retirando o marcador de fim de linha para melhor formatação do csv
 final = final.rename(columns = {'RN\n(alteração)':'RN (alteração)','OD': abrevi_leg['OD'], 'AMB': abrevi_leg['AMB']})
 
-final.head()
 compression_opts = dict(method='zip',
                         archive_name='output_Teste_Ciro_Moraes.csv')  
 final.to_csv('Teste_Ciro_Moraes.zip', index=False,
           compression=compression_opts)
+print(f"concluido!. arquivo: Teste_Ciro_Moraes.zip salvo em {os.getcwd()}")
 #deletando a pasta auxilar após usa-la
 shutil.rmtree(extract_dir)  
