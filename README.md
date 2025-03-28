@@ -45,7 +45,7 @@
 # 4 - Teste de API
 
 - Durante este teste, me perdi um pouco, mas acabei chegando a um resultado concreto. Desenvolvi uma API em Flask que aceita dois parâmetros: a descrição (`q`) ou o nome (`nome`), ambos seguidos da quantidade.
-- Para a busca por descrição, utilizei a biblioteca Polars, que, por depender de queries constantes, mostrou-se bem mais rápida que o Pandas. Em testes, o tempo de execução caiu de 2.6 segundos (com Pandas) para 0.4 segundos (com Polars).
+- Para a busca por descrição, utilizei a biblioteca Polars, que, por depender de queries constantes, mostrou-se bem mais rápida que o Pandas, evoluindo bem a performance da API. Em testes, o tempo de execução caiu de 2.6 segundos (com Pandas) para 0.4 segundos (com Polars).
   
 - O frontend foi construído com **Vue.js** e estilizado com **Tailwind CSS**, a tecnologia com a qual tenho mais familiaridade. Criei os métodos de requisição ao backend e botões para que o usuário defina o modo desejado.  
 - Disponibilizei o código fonte para testes e fiz o deploy da API e do frontend no **Vercel** para facilitar a visualização e teste:
