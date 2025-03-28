@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "4bf46fa7-e98e-458e-a777-57c83ecee116",
+		"name": "testeapi_intuitivecare",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43512781"
+	},
+	"item": [
+		{
+			"name": "requestdescr",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "request_descricao_upper",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://flaskapiintuitive4.vercel.app/busca?q=EVENTOS/SINISTROS CONHECIDOS&quant=10",
+					"protocol": "https",
+					"host": [
+						"flaskapiintuitive4",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"busca"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "EVENTOS/SINISTROS CONHECIDOS"
+						},
+						{
+							"key": "quant",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query_nome_brasil",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://flaskapiintuitive4.vercel.app/busca?nome=brasil&quant=10",
+					"protocol": "https",
+					"host": [
+						"flaskapiintuitive4",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"busca"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "brasil"
+						},
+						{
+							"key": "quant",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teste_nome_acento",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://flaskapiintuitive4.vercel.app/busca?nome=saúde&quant=10",
+					"protocol": "https",
+					"host": [
+						"flaskapiintuitive4",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"busca"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "saúde"
+						},
+						{
+							"key": "quant",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teste_descr_100",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://flaskapiintuitive4.vercel.app/busca?q=pagament&quant=100",
+					"protocol": "https",
+					"host": [
+						"flaskapiintuitive4",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"busca"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "pagament"
+						},
+						{
+							"key": "quant",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
