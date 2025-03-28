@@ -48,11 +48,14 @@
 - Para a busca por descrição, utilizei a biblioteca Polars, que, por depender de queries constantes, mostrou-se bem mais rápida que o Pandas. Em testes, o tempo de execução caiu de 2.6 segundos (com Pandas) para 0.4 segundos (com Polars).
   
 - O frontend foi construído com **Vue.js** e estilizado com **Tailwind CSS**, a tecnologia com a qual tenho mais familiaridade. Criei os métodos de requisição ao backend e botões para que o usuário defina o modo desejado.  
-- Disponibilizei o código fonte para testes e fiz o deploy da API e do frontend na **Vercel**:
+- Disponibilizei o código fonte para testes e fiz o deploy da API e do frontend no **Vercel** para facilitar a visualização e teste:
+  ![Image](https://github.com/user-attachments/assets/09a04c7e-b850-41c2-bd39-5ccf5721abcb)
+  
   - **Frontend**: [https://vuefrontintuitive4.vercel.app/](https://vuefrontintuitive4.vercel.app/)
+    
   - **Backend**: [https://flaskapiintuitive4.vercel.app/](https://flaskapiintuitive4.vercel.app/)
 - No código-fonte do **Teste 4**, há um **JSON** com os testes realizados no **Postman**.
-- ![Image](https://github.com/user-attachments/assets/b9ebbe58-55e5-410f-973a-ae8ec8d4c7e0)  
+  ![Image](https://github.com/user-attachments/assets/b9ebbe58-55e5-410f-973a-ae8ec8d4c7e0)  
 - Realizei **5 testes**, demonstrando a capacidade da API.  
 - Para testar a API, basta utilizar um dos seguintes endpoints:  
 
